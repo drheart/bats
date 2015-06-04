@@ -84,7 +84,9 @@ bats_test_begin() {
   if [ -n "$BATS_EXTENDED_SYNTAX" ]; then
     echo "begin $BATS_TEST_NUMBER $BATS_TEST_DESCRIPTION" >&3
   fi
+  set +e
   setup
+  set -e
 }
 
 bats_test_function() {
